@@ -25,6 +25,6 @@ WORKDIR C:\Iqan\FileWriterService
 
 COPY --from=builder C:/output .
 
-RUN "C:/Windows/Microsoft.NET/Framework/v4.0.30319/installutil.exe" "FileWriterService.exe"
+RUN C:/Windows/Microsoft.NET/Framework/v4.0.30319/installutil.exe FileWriterService.exe
 
 RUN net start Iqan.FileWriter
