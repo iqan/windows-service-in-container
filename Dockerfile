@@ -27,4 +27,5 @@ COPY --from=builder C:/output .
 
 RUN C:/Windows/Microsoft.NET/Framework/v4.0.30319/installutil.exe FileWriterService.exe
 
-RUN net start Iqan.FileWriter
+# Hack to keep container running
+CMD ["POWERSHELL", "While ((Get-Service -Name Iqan.FileWriter).Status.ToString() -ne 'Stopped') {}"]
