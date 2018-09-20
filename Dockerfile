@@ -19,9 +19,9 @@ LABEL Maintainer="Iqan Shaikh"
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-RUN MKDIR C:\Iqan\FileWriterService
+RUN MKDIR C:/Iqan/FileWriterService
 
-WORKDIR C:\Iqan\FileWriterService
+WORKDIR C:/Iqan/FileWriterService
 
 COPY --from=builder C:/output .
 
